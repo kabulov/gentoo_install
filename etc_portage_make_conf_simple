@@ -1,0 +1,12 @@
+
+CFLAGS="-march=native -O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+CHOST="x86_64-pc-linux-gnu"
+USE="mmx sse sse2 bindist"
+PORTDIR="/usr/portage"
+DISTDIR="${PORTDIR}/distfiles"
+PKDIR="${PORTDIR}/packages"
+ACCEPT_KEYWORDS="-j16 -s"
+
+GENTOO_MIRRORS="http://mirror.yandex.ru/gentoo-distfiles/"
+SYNC="rsync://rsync2.ru.gentoo.org/gentoo-portage"
