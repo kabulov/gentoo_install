@@ -1,9 +1,15 @@
 
-1. insert install-amd64-minimal-date
-2. parted -a optimal /dev/sda
-3.  mklabel msdos
-4.  unit mib
-5.  mkpart primary 1 -1
-6.  quit
-7. mkfs.ext4 /dev/sda1
-8. mount /dev/sda1 /mnt/gentoo
+1.  insert install-amd64-minimal-date
+2.  parted -a optimal /dev/sda
+3.   mklabel msdos
+4.   unit mib
+5.   mkpart primary 1 -1
+6.   quit
+7.  mkfs.ext4 /dev/sda1
+8.  mount /dev/sda1 /mnt/gentoo
+9.  cd /mnt/gentoo
+10. links http://www.gentoo.org/en/main
+11. mirrors->russia->yandex.ru(http)*->releases->amd64->autobuilds->current-stage3-amd64->stage3-amd64-date.tar.bz2
+12. tar xjpf stage3-amd64-date.tar.bz2
+13. nano etc/portage/make.conf
+14. 
