@@ -9,7 +9,46 @@
 8.  mount /dev/sda1 /mnt/gentoo
 9.  cd /mnt/gentoo
 10. links http://www.gentoo.org/en/main
-11. mirrors->russia->yandex.ru(http)*->releases->amd64->autobuilds->current-stage3-amd64->stage3-amd64-date.tar.bz2
+11. mirrors->
+    russia->
+    yandex.ru(http)*->
+    releases->amd64->
+    autobuilds->
+    current-stage3-amd64->
+    stage3-amd64-date.tar.bz2
 12. tar xjpf stage3-amd64-date.tar.bz2
 13. nano etc/portage/make.conf
-14. 
+14. mirrorselect -i -o >> etc/portage/make.conf -> *russia: Yandex.ru : http://mirror.yandex.ru/gentoo-distfiles/
+15. mirrorselect -i -r -o >> etc/portage/make.conf -> *Russia : Yandex.ru - rsync2.ru.gentoo.org
+16. cp -L /etc/resolv.conf etc
+17. for i in proc sys dev; do mount --rbind /$i $i; done
+18. chroot /mnt/gentoo /bin/bash
+19. source /etc/profile
+20. emerge-webrsync
+21. eselect profile list
+22. eselect profile set [number]
+23. emeerge gentoo-sources
+24. cd /usr/src/linux
+25. make menuconfig -> here 
+    "device drivers-> 
+    graphics support -> 
+    frame buffer devices -> 
+    support for frame buffer devices -> 
+    VESA VGA graphics support"
+26. make && make modules_install && make install
+27. nano /etc/fstab : /dev/sda1 
+28. rc-update add /etc/init.d/net.lo default
+29. passwd
+30. emerge dhcpcd
+31. emerge sys-boot/grub
+32. grub2-install /dev/sda
+33. grub2-mkconfig -o /boot/grub/grub.cfg
+34. exit
+35. cd
+36. umount /mnt/gentoo/{dev,sys,proc,boot,}
+37. poweroff
+38. eject install-amd64-minimal-date
+    
+    power on && have fun )
+
+
