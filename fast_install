@@ -45,9 +45,10 @@
 33. grub2-mkconfig -o /boot/grub/grub.cfg
 34. exit
 35. cd
-36. umount /mnt/gentoo/{dev,sys,proc,boot,}
-37. poweroff
-38. eject install-amd64-minimal-date
+36. umount -l /mnt/gentoo/dev{/shm,/pts,}
+37. umount /mnt/gentoo{/boot,/sys,/proc,}
+38. poweroff
+39. eject install-amd64-minimal-date
     
     power on && have fun )
 
