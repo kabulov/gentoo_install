@@ -1,2 +1,9 @@
 
-several major steps for setting up gentoo without configuring and emerging stuff like metalog, cronie, etc
+1. insert install-amd64-minimal-date
+2. parted -a optimal /dev/sda
+3.  mklabel msdos
+4.  unit mib
+5.  mkpart primary 1 -1
+6.  quit
+7. mkfs.ext4 /dev/sda1
+8. mount /dev/sda1 /mnt/gentoo
