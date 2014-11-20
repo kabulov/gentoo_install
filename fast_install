@@ -36,7 +36,7 @@
     support for frame buffer devices -> 
     VESA VGA graphics support"
 26. make -j8 && make -j8 modules_install && make -j8 install
-27. nano /etc/fstab : /dev/sda1 
+27. nano /etc/fstab : /dev/sda1     /   ext4    noatime     0 1
 28. rc-update add /etc/init.d/net.lo default
 29. passwd
 30. emerge dhcpcd
