@@ -66,19 +66,21 @@
 49.  emerge metalog
 50.  emerge cronie
 51.  emerge mlocate
-52.  rc-update add metalog default
-53.  rc-update add cronie default
-54.  rc-update add sshd default
-55.  emerge dhcpcd
-56.  emerge eix
-57.  emerge sys-boot/grub
-58.  grub2-install /dev/sda
-59.  in /etc/default/grub need line GRUB_CMDLINE_LINUX_DEFAULT="vga=0x305"
-60.  grub2-mkconfig -o /boot/grub/grub.cfg
-61.  exit
-62.  cd
-63.  umount /mnt/gentoo/dev{/shm,/pts,}
-64.  umount /mnt/gentoo{/boot,/sys,/proc,}
-65.  poweroff
-66.  eject install-amd64-minimal-*.iso
-67.  poweron and have fun
+52.  updatedb -> for mlocate -> db of files, easy to locate
+53.  rc-update add metalog default
+54.  rc-update add cronie default
+55.  rc-update add sshd default
+56.  emerge dhcpcd
+57.  emerge eix
+58.  eix-update
+59.  emerge sys-boot/grub
+60.  grub2-install /dev/sda
+61.  in /etc/default/grub need line GRUB_CMDLINE_LINUX_DEFAULT="vga=0x305"
+62.  grub2-mkconfig -o /boot/grub/grub.cfg
+63.  exit
+64.  cd
+65.  umount /mnt/gentoo/dev{/shm,/pts,}
+66.  umount /mnt/gentoo{/boot,/sys,/proc,}
+67.  poweroff
+68.  eject install-amd64-minimal-*.iso
+69.  poweron and have fun
