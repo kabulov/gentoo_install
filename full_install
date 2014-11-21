@@ -73,11 +73,12 @@
 56.  emerge eix
 57.  emerge sys-boot/grub
 58.  grub2-install /dev/sda
-59.  grub2-mkconfig -o /boot/grub/grub.cfg
-60.  exit
-61.  cd
-62.  umount /mnt/gentoo/dev{/shm,/pts,}
-63.  umount /mnt/gentoo{/boot,/sys,/proc,}
-64.  poweroff
-65.  eject install-amd64-minimal-*.iso
-66.  poweron and have fun
+59.  in /etc/default/grub need line GRUB_CMDLINE_LINUX_DEFAULT="vga=0x305"
+60.  grub2-mkconfig -o /boot/grub/grub.cfg
+61.  exit
+62.  cd
+63.  umount /mnt/gentoo/dev{/shm,/pts,}
+64.  umount /mnt/gentoo{/boot,/sys,/proc,}
+65.  poweroff
+66.  eject install-amd64-minimal-*.iso
+67.  poweron and have fun
