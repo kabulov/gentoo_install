@@ -70,13 +70,14 @@
 53.  rc-update add cronie default
 54.  rc-update add sshd default
 55.  emerge dhcpcd
-56.  emerge sys-boot/grub
-57.  grub2-install /dev/sda
-58.  grub2-mkconfig -o /boot/grub/grub.cfg
-59.  exit
-60.  cd
-61.  umount -l /mnt/gentoo/dev{/shm,/pta,}
-62.  umount /mnt/gentoo{/boot,/sys,/proc,}
-63.  poweroff
-64.  eject install-amd64-minimal-*.iso
-64.  poweron and have fun
+56.  emerge eix
+57.  emerge sys-boot/grub
+58.  grub2-install /dev/sda
+59.  grub2-mkconfig -o /boot/grub/grub.cfg
+60.  exit
+61.  cd
+62.  umount -l /mnt/gentoo/dev{/shm,/pta,}
+63.  umount /mnt/gentoo{/boot,/sys,/proc,}
+64.  poweroff
+65.  eject install-amd64-minimal-*.iso
+66.  poweron and have fun
