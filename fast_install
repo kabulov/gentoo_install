@@ -27,7 +27,7 @@
 20. emerge-webrsync
 21. eselect profile list
 22. eselect profile set [number]
-23. emeerge gentoo-sources
+23. emerge gentoo-sources
 24. cd /usr/src/linux
 25. make menuconfig -> here 
     "device drivers-> 
