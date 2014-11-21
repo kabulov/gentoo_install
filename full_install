@@ -60,9 +60,9 @@
 43.  nano /etc/hosts -> 127.0.0.1 localhost vbhost
 44.  emerge pciutils usbutils
 45.  passwd
-46.  nano /etc/rc-conf
-47.  nano /etc/conf.d/keymaps
-48.  nano /etc/conf.d/hwclock
+46.  nano /etc/rc-conf -> configure 
+47.  nano /etc/conf.d/keymaps -> configure
+48.  nano /etc/conf.d/hwclock -> configure
 49.  emerge metalog
 50.  emerge cronie
 51.  emerge mlocate
@@ -75,4 +75,8 @@
 58.  grub2-mkconfig -o /boot/grub/grub.cfg
 59.  exit
 60.  cd
-61.  umount /mnt/gentoo
+61.  umount -l /mnt/gentoo/dev{/shm,/pta,}
+62.  umount /mnt/gentoo{/boot,/sys,/proc,}
+63.  poweroff
+64.  eject install-amd64-minimal-*.iso
+64.  poweron and have fun
