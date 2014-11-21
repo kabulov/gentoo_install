@@ -24,10 +24,48 @@
 12.  cp -L /etc/resolv.conf etc
 13.  for i in proc sys dev; do mount --rbind /$i $i; done
 14.  chroot /mnt/gentoo /bin/bash
-15.  source /etc/profile
+15.  source etc/profile
 16.  export PS1="(chroot) $PS1"
 17.  emerge-webrsync
 18.  eselect news list
 19.  eselect profile list
-20.  eselect profile set [number]
-21.  
+20.  eselect profile set [number] -> modifies /usr/portage/profiles/use.desc
+21.  echo "Europe/Moscow" > etc/timezone -> look at /usr/share/zoneinfo/
+22.  emerge --config sys-libs/timezone-data -> updates /etc/localtime
+23.  nano etc/locale.gen -> choose en_US.UTF-8 UTF-8
+24.  locale-gen
+25.  eselect locale list
+26.  eselect locale set [number]
+27.  env-update && source etc/profile
+28.  emerge gentoo-sources
+29.  ls -l usr/src/linux -> symlink to core
+30.  emerge pcituils
+31.  lspci
+32.  cd usr/src/linux
+33.  make menuconfig -> here 
+     "device drivers-> 
+     graphics support -> 
+     frame buffer devices -> 
+     support for frame buffer devices -> 
+     VESA VGA graphics support"
+34.  make -j12 && make -j12 modules_install && make -j12 install
+35.  cd /
+36.  emerge -av linux-firmware
+37.  ls lib/firmware
+38.  find lib/modules/[kernel-version]/ -type f -iname '*.o' -or -iname '*.ko' | less
+39.  nano etc/conf.d/modules -> write modules you need to boot at load
+40.  nano etc/fstab -> configure file system table -> e.g. -> /dev/sda1     /   ext4    noatime     0 1
+41.  nano etc/conf.d/hostname -> hostname localhost vbhost
+42.  rc-update add /etc/init.d/net.lo default
+43.  nano /etc/hosts -> 127.0.0.1 localhost vbhost
+44.  emerge pciutils usbutils
+45.  passwd
+46.  nano /etc/rc-conf
+47.  nano /etc/conf.d/keymaps
+48.  nano /etc/conf.d/hwclock
+49.  emerge metalog
+50.  emerge cronie
+51.  emerge mlocate
+52.  rc-update add metalog default
+53.  rc-update add cronie default
+54.  
