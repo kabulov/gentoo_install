@@ -1,2 +1,33 @@
 
-install everything, configure locales, sshd, firmware, etc
+1.   insert install-amd64-minimal-*.iso
+2.   parted -a optimal /dev/sda
+2.1. mklabel msdos (if gpt then /boot partition must exist)
+2.2. unit mib
+2.3. mkpart primary 1 -1
+2.4. print (everything is ok ?)
+2.5. quit
+3.   mkfs.ext4 /dev/sda1
+4.   mount /dev/sda1 /mnt/gentoo
+5.   cd /mnt/gentoo
+6.   links http://www.gentoo.org/en/main
+7.   mirrors->
+     russia->
+     yandex.ru(http)*->
+     releases->amd64->
+     autobuilds->
+     current-stage3-amd64->
+     stage3-amd64-date.tar.bz2
+8.   tar xvjpf stage3-amd64-date.tar.bz2
+9.   nano etc/portage/make.conf
+10.  mirrorselect -i -o >> etc/portage/make.conf -> *russia: Yandex.ru : http://mirror.yandex.ru/gentoo-distfiles/
+11.  mirrorselect -i -r -o >> etc/portage/make.conf -> *Russia : Yandex.ru - rsync2.ru.gentoo.org
+12.  cp -L /etc/resolv.conf etc
+13.  for i in proc sys dev; do mount --rbind /$i $i; done
+14.  chroot /mnt/gentoo /bin/bash
+15.  source /etc/profile
+16.  export PS1="(chroot) $PS1"
+17.  emerge-webrsync
+18.  eselect news list
+19.  eselect profile list
+20.  eselect profile set [number]
+21.  
