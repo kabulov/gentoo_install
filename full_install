@@ -68,4 +68,11 @@
 51.  emerge mlocate
 52.  rc-update add metalog default
 53.  rc-update add cronie default
-54.  
+54.  rc-update add sshd default
+55.  emerge dhcpcd
+56.  emerge sys-boot/grub
+57.  grub2-install /dev/sda
+58.  grub2-mkconfig -o /boot/grub/grub.cfg
+59.  exit
+60.  cd
+61.  umount /mnt/gentoo
