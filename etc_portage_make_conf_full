@@ -15,3 +15,5 @@ EMERGE_DEFUALT_OPTS="--ask --verbose --quiet-build n"
 
 GENTOO_MIRRORS="http://mirror.yandex.ru/gentoo-distfiles/"
 SYNC="rsync://rsync2.ru.gentoo.org/gentoo-portage"
+
+p.s. if you use mirroselect ... then do not add last 2 lines
