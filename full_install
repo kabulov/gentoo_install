@@ -22,7 +22,7 @@
 10.  mirrorselect -i -o >> etc/portage/make.conf -> *russia: Yandex.ru : http://mirror.yandex.ru/gentoo-distfiles/
 11.  mirrorselect -i -r -o >> etc/portage/make.conf -> *Russia : Yandex.ru - rsync2.ru.gentoo.org
 12.  cp -L /etc/resolv.conf etc
-13.  for i in proc sys dev; do mount --rbind /$i $i; done
+13.  for i in proc sys dev; do mount --rbind /$i $i; done #bind VS rbind
 14.  chroot /mnt/gentoo /bin/bash
 15.  source etc/profile
 16.  export PS1="(chroot) $PS1"
@@ -76,7 +76,7 @@
 59.  grub2-mkconfig -o /boot/grub/grub.cfg
 60.  exit
 61.  cd
-62.  umount -l /mnt/gentoo/dev{/shm,/pta,}
+62.  umount /mnt/gentoo/dev{/shm,/pts,}
 63.  umount /mnt/gentoo{/boot,/sys,/proc,}
 64.  poweroff
 65.  eject install-amd64-minimal-*.iso
