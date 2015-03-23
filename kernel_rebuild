@@ -1,0 +1,10 @@
+kernel after configuring
+
+make && make modules_install && install
+root# cd /usr/src/linux
+root# cp arch/i386/boot/bzImage /boot/linux-2.6.X-gentoo-rX
+root# cp System.map /boot/System-map-linux-2.6.X-gentoo-rX
+root# grub-install /dev/sda
+root#no
+grub2-install /dev/sda
+grub2-mkconfig -o /boot/grub/grub.cfg
